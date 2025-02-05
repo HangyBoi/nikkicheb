@@ -1,13 +1,13 @@
 const portfolioImages = [
-    { src: '../images/portfolio/photo (24).jpg', alt: 'Selected shot for Main Portfolio' },
-    { src: '../images/portfolio/photo (3).jpg', alt: 'Selected shot for Main Portfolio' },
-    { src: '../images/portfolio/photo (11).jpg', alt: 'Selected shot for Main Portfolio' },
-    { src: '../images/portfolio/photo (32).jpg', alt: 'Selected shot for Main Portfolio' },
-    { src: '../images/portfolio/photo (4).jpg', alt: 'Selected shot for Main Portfolio' },
-    { src: '../images/portfolio/photo (37).jpg', alt: 'Selected shot for Main Portfolio' },
-    { src: '../images/portfolio/photo (23).jpg', alt: 'Selected shot for Main Portfolio' },
-    { src: '../images/portfolio/photo (14).jpg', alt: 'Selected shot for Main Portfolio' },
-    { src: '../images/portfolio/photo (26).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(24).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(3).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(11).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(32).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(4).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(37).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(23).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(14).jpg', alt: 'Selected shot for Main Portfolio' },
+    { src: '../images/portfolio/photo(26).jpg', alt: 'Selected shot for Main Portfolio' },
     
 ];
 
