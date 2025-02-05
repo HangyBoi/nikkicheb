@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+@import url(style-small.css) screen and (max-width: 1080px);
+
+/* Reset / box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+
+  /* Hide the system cursor so only the custom cursor appears */
+  cursor: none;
+}
+
+/* Inverse text selection */
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* We’ll use flex layout on body */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header pinned top-left */
+header {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 10;
+  background-color: rgba(24, 22, 22, 0.6);
+}
+
+.logo-container {
+  margin-left: 1rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* The main content area sits below the fixed header. */
+main {
+  flex: 1;           /* fill up remaining space */
+  padding-top: 70px; 
+  padding-bottom: 60px;
+}
+
+/* The horizontal flex container for image + nav */
+.homepage-layout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 5rem;
+  position: relative;
+}
+
+/* Left image placeholder */
+.image-placeholder {
+  flex: 0.5; 
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: clamp(300px, 50vw, 700px);
+  
+  aspect-ratio: 1.51/1;     
+  border-radius: 2%;
+}
+
+/* Slideshow image takes up the entire container, 
+   and transitions with opacity for a smooth fade. */
+   #slideshowImage {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.8s ease; 
+    opacity: 1;            /* default visible */
+  }
+
+/* Nav on the right */
+.vertical-nav {
+  flex: 0.6;
+  margin-left: clamp(2rem, 5vw, 10rem);
+}
+.vertical-nav ul {
+  list-style-type: none;
+}
+.vertical-nav li {
+  margin: 1.5rem 0;
+}
+.vertical-nav a {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  color: #fff;
+  transition: color 0.3s;
+}
+.vertical-nav a:hover {
+  color: red;
+}
+
+/* Now .name-occupation is just a normal section below the flex row */
+.name-occupation {
+  margin: 2rem 2rem;  /* or however much spacing you like */
+  text-align: right;
+}
+.my-name {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  font-family: 'DM Sans';
+}
+.occupation {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Divider line above footer */
+.page-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ff0000;
+  margin: 0; /* we can control spacing if needed */
+}
+
+/* Footer pinned to bottom */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0a0a0a; 
+  text-align: center;
+  z-index: 10;
+}
+
+.footer-links {
+  margin-left: 2rem;
+}
+
+.footer-links a {
+  font-size: 1rem;
+  margin: 2rem;
+  color: #fff;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  color: red;
+}
+.footer-credits {
+  margin: 1rem;
+  margin-right: 2rem;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* CUSTOM CURSOR STYLES */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  /* place center of circle at mouse coords */
+  transform: translate(-50%, -50%);
+  /* ensure scaling happens from the center */
+  transform-origin: center center;
+}
+
+/* Click animation */
+@keyframes click {
+  0%   { transform: scale(1) translate(-50%, -50%); }
+  50%  { transform: scale(1.5) translate(-30%, -30%); }
+  100% { transform: scale(1) translate(-50%, -50%); }
+}
+.cursor-click {
+  animation: click 0.3s ease-in-out;
+}

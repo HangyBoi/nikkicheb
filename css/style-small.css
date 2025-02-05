@@ -1,0 +1,45 @@
+/* For screens up to 768px wide */
+
+/* Make the layout vertical (image at top, nav underneath) */
+.homepage-layout {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  /* Full width image on top */
+  .image-placeholder {
+    width: 100%;
+    aspect-ratio: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .vertical-nav {
+    margin-left: 0;
+  }
+  
+  .vertical-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;    /* spacing between nav links */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .vertical-nav li {
+    margin: 0;   /* remove the 1.5rem vertical spacing from desktop styles */
+  }
+  
+  /* Make the nav text smaller if you wish */
+  .vertical-nav a {
+    font-size: 1.5rem;
+  }
+  
+  /* The name-occupation goes below everything, centered */
+  .name-occupation {
+    position: static;
+    margin-top: 1rem;
+    text-align: center;
+  }

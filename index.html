@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home Screen</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Custom Cursor Element -->
+  <div class="custom-cursor"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <!-- Make the logo clickable -->
+      <a href="../index.html"> 
+        <img class="logo" src="../images/logo_rev1x.png" alt="My Logo" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <!-- The horizontal flex container for image + nav -->
+    <section class="homepage-layout">
+    <div class="image-placeholder">
+      <!-- Single image element for the slideshow -->
+      <img id="slideshowImage" src="./images/photo1.jpg" alt="Slideshow Photo" />
+    </div>
+    <nav class="vertical-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/portfolio.html">Portfolio</a></li>
+        <li><a href="pages/about.html">About</a></li>
+      </ul>
+    </nav>
+    </section>
+
+
+    <!-- Name + occupation BELOW the homepage-layout -->
+    <section class="name-occupation">
+      <p class="my-name">Nichita Cebotari</p>
+      <p class="occupation">Street Photographer</p>
+    </section>
+  </main>
+
+  <!-- Footer always visible (fixed) -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/nikkicheb/" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/nichita-cebotari-881979207/" target="_blank">LinkedIn</a>
+      <a href="https://linktr.ee/nikkicheb"target="_blank">Linktree</a>
+    </div>
+    <p class="footer-credits">© 2025 – Nichita Cebotari</p>
+  </footer>
+
+  <!-- Your scripts -->
+  <script src="scripts/script.js"></script>
+</body>
+</html>

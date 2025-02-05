@@ -1,0 +1,8 @@
+.portfolio-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 3rem;
+      max-width: 600px;
+      margin: 0 auto;
+}
+  

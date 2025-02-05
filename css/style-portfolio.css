@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+@import url(style-portfolio-small.css) screen and (max-width: 1080px);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+
+  /* Hide the system cursor to show your custom cursor */
+  cursor: none;
+}
+
+/* Optional inverse text selection, if you want it consistent */
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Keep body in a flex column to accommodate fixed footer/header */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------- */
+/* HEADER: Make space for top-nav     */
+/* ---------------------------------- */
+header {
+    display: flex;                  /* put logo on left, nav on right */
+    justify-content: space-between; 
+    align-items: center;
+    position: static;
+    width: 100%;
+    padding: 1rem 1rem;
+    background-color: rgba(24, 22, 22, 0.6);
+    z-index: 10;
+  }
+
+.logo-container {
+    margin-left: 1rem;
+  }
+
+  .logo-container a {
+    display: inline-block; /* So the logo is clickable as a block */
+  }
+  .logo {
+    max-height: 50px; /* adjust as needed */
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+
+/* ---------------------------------- */
+/* TOP NAV (top-right)               */
+/* ---------------------------------- */
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+  }
+  
+  .top-nav ul li {
+    display: inline-block;
+    margin-right: 2rem;
+  }
+  
+  .top-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  .top-nav ul li a:hover {
+    color: red;
+  }
+
+/* Footer pinned to bottom */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #0a0a0a; 
+    text-align: center;
+    z-index: 10;
+  }
+  
+  .footer-links {
+    margin-left: 2rem;
+  }
+  
+  .footer-links a {
+    font-size: 1rem;
+    margin: 2rem;
+    color: #fff;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+  .footer-links a:hover {
+    color: red;
+  }
+  .footer-credits {
+    margin: 1rem;
+    margin-right: 2rem;
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+/* --- PORTFOLIO PAGE SPECIFIC --- */
+
+.portfolio-intro {
+  margin-top: 70px;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 0 2rem;    
+  display: flex;                  /* so buttons and heading are side by side */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;        /* center them horizontally in the main area */
+  gap: 2rem;    
+}
+
+.portfolio-filter-buttons {
+    display: flex;
+    gap: 0.5rem; 
+  }
+
+  /* Actual buttons */
+.filter-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #000;
+    border-radius: 1rem; /* Rounded corners */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    margin: 0 1rem;
+  }
+  .filter-button:hover {
+    border: 2px solid rgb(255, 255, 255);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    transform: translateY(-2px);
+  }
+
+/* The grid itself: 3 columns, with decent gap/padding to avoid crowding */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;              
+  padding: 2rem 3rem;     
+  margin-bottom: 3rem;    
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .portfolio-intro h1,
+.portfolio-intro p {
+  margin: 0; 
+  text-align: center;
+}
+
+.portfolio-intro h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+/* Each item’s <img> is responsive, with a thin white border */
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+  border-radius: 2%;
+}
+
+/* CUSTOM CURSOR (same as home page) */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+/* Click animation (same as home page) */
+@keyframes click {
+  0%   { transform: scale(1) translate(-50%, -50%); }
+  50%  { transform: scale(1.5) translate(-30%, -30%); }
+  100% { transform: scale(1) translate(-50%, -50%); }
+}
+.cursor-click {
+  animation: click 0.3s ease-in-out;
+}

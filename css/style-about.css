@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+/* Import the small-screen CSS for responsiveness */
+@import url("style-about-small.css") screen and (max-width: 1080px);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  cursor: none; /* Hides the default cursor if you’re showing a custom one */
+}
+
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- HEADER --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: static;
+  width: 100%;
+  padding: 1rem 1rem;
+  background-color: rgba(24, 22, 22, 0.6);
+  z-index: 10;
+}
+
+.logo-container {
+  margin-left: 1rem;
+}
+
+.logo-container a {
+  display: inline-block;
+}
+
+.logo {
+  max-height: 50px;
+  width: auto;
+}
+
+/* --- TOP NAV --- */
+.top-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+.top-nav ul li {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.top-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+.top-nav ul li a:hover {
+  color: red;
+}
+
+/* --- MAIN / ABOUT SECTION --- */
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;      
+}
+
+/* The container that holds both columns */
+.about-container {
+  display: flex;
+  align-items: center; 
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Left column (text) */
+.info-column {
+  flex: 1;             /* Let it fill half the container by default */
+  margin-right: 2rem;  /* Gap between text and image */
+}
+
+.info-column h1 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-decoration: overline;
+}
+.info-column p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.info-column h2 {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.social-buttons {
+    padding: 1rem 0rem;
+}
+
+/* Social buttons inside .info-column */
+.social-buttons a {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.5rem 1.2rem;
+  color: #000;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.social-buttons a:hover {
+  /* Outline border color on hover */
+  border: 2px solid rgb(255, 255, 255);
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  transform: translateY(-2px);
+}
+
+/* Right column (profile) */
+.profile-column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+}
+
+/* Make the profile image bigger without needing a wider column */
+.profile-column img {
+  width: 500px;  /* set a fixed width or max-width here */
+  height: auto;
+  border-radius: 50%; /* circular image */
+  object-fit: cover;  /* helpful if the image is not already a perfect square */
+}
+
+/* --- FOOTER --- */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0a0a0a;
+  text-align: center;
+  z-index: 10;
+}
+
+.footer-links {
+  margin-left: 2rem;
+}
+.footer-links a {
+  font-size: 1rem;
+  margin: 2rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: red;
+}
+.footer-credits {
+  margin: 1rem;
+  margin-right: 2rem;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* --- CUSTOM CURSOR --- */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+@keyframes click {
+  0%   { transform: scale(1) translate(-50%, -50%); }
+  50%  { transform: scale(1.5) translate(-30%, -30%); }
+  100% { transform: scale(1) translate(-50%, -50%); }
+}
+.cursor-click {
+  animation: click 0.3s ease-in-out;
+}

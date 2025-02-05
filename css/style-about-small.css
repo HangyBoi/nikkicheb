@@ -1,0 +1,16 @@
+/* When screen width <= 1080px */
+
+.about-container {
+    flex-direction: column;
+  }
+  
+  .info-column,
+  .profile-column {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .profile-column img {
+    max-width: 50%;
+  }
+  
